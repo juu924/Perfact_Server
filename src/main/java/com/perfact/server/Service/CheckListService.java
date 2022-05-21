@@ -6,7 +6,6 @@ import com.perfact.server.domain.dto.checklist.ListSearchDto;
 import com.perfact.server.domain.dto.checklist.ListUpdateDto;
 import com.perfact.server.domain.jpa.CheckListRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.Check;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -15,6 +15,7 @@ public class CheckList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private Long userId;
 
     @Column(length = 50, nullable = false)
