@@ -2,8 +2,8 @@ package com.perfact.server.Service;
 
 import com.perfact.server.domain.Company;
 import com.perfact.server.domain.Home;
-import com.perfact.server.domain.dto.bookmark.CompanyDto;
-import com.perfact.server.domain.dto.bookmark.HomeDto;
+import com.perfact.server.dto.bookmark.CompanyDto;
+import com.perfact.server.dto.bookmark.HomeDto;
 import com.perfact.server.domain.jpa.CompanyRepository;
 import com.perfact.server.domain.jpa.HomeRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class BookmarkService {
 
     @Transactional(readOnly = true)
     public HomeDto getHome(Long userId) {
-        Home home = homeRepository.findById(userId).get();
+        Home home = homeRepository.findByUserId(userId);
 
         HomeDto homeDto = HomeDto.builder()
                 .homeLong(home.getHomeLong())
@@ -41,7 +41,7 @@ public class BookmarkService {
 
     @Transactional(readOnly = true)
     public CompanyDto getCompany(Long userId) {
-        Company company = companyRepository.findById(userId).get();
+        Company company = companyRepository.findByUserId(userId);
 
         CompanyDto companyDto = CompanyDto.builder()
                 .companyLong(company.getCompanyLong())
@@ -54,13 +54,13 @@ public class BookmarkService {
 
     @Transactional
     public void deleteHome(Long userId){
-        Home home = homeRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("집이 등록되지 않았습니다."));
+        Home home = homeRepository.findByUserId(userId);
         homeRepository.delete(home);
     }
 
     @Transactional
     public void deleteCompany(Long userId){
-        Company company = companyRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("회사가 등록되지 않았습니다."));
+        Company company = companyRepository.findByUserId(userId);
         companyRepository.delete(company);
     }
 

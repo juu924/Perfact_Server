@@ -1,4 +1,4 @@
-package com.perfact.server.domain.dto.bookmark;
+package com.perfact.server.dto.bookmark;
 
 import com.perfact.server.domain.Company;
 

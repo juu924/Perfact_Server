@@ -1,5 +1,6 @@
 package com.perfact.server.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class Home {
     @Id
@@ -15,6 +17,7 @@ public class Home {
     private Long id;
 
     //추후에 user table 과 관계 매핑
+    @Column(name = "user_id")
     private Long userId;
 
     //집 위도 좌표
