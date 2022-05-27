@@ -1,4 +1,4 @@
-package com.perfact.server.domain.dto.bookmark;
+package com.perfact.server.dto.bookmark;
 
 import com.perfact.server.domain.Home;
 import lombok.Builder;
@@ -8,15 +8,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class HomeDto {
-    private Long id;
     private Long userId;
     private double homeLat;
     private double homeLong;
     private String homeAddr;
 
     @Builder
-    public HomeDto(Long id, Long userId, double homeLat, double homeLong, String homeAddr){
-        this.id = id;
+    public HomeDto(Long userId, double homeLat, double homeLong, String homeAddr){
         this.userId = userId;
         this.homeLat =homeLat;
         this.homeLong = homeLong;

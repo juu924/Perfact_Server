@@ -1,6 +1,5 @@
-package com.perfact.server.domain.dto.checklist;
+package com.perfact.server.dto.checklist;
 
-import com.perfact.server.domain.checklist.Status;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,10 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ListUpdateDto {
     private String content;
-    private Status status;
+    private String status;
 
     @Builder
-    public ListUpdateDto(String content, Status status){
+    public ListUpdateDto(String content, String status){
         this.content = content;
         this.status = status;
     }

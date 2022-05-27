@@ -1,19 +1,20 @@
-package com.perfact.server.domain.dto.checklist;
+package com.perfact.server.dto.checklist;
 
-import com.perfact.server.domain.checklist.CheckList;
-import com.perfact.server.domain.checklist.Status;
+import com.perfact.server.domain.CheckList;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class ListSearchDto {
     private Long id;
-    private Long userId;
     private String content;
-    private Status status;
+    private String status;
 
+    @Builder
     public ListSearchDto(CheckList entity){
         id = entity.getId();
-        userId = entity.getUserId();
         content = entity.getContent();
         status = entity.getStatus();
     }

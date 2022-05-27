@@ -1,4 +1,4 @@
-package com.perfact.server.domain.dto.likedplace;
+package com.perfact.server.dto.likedplace;
 
 
 import com.perfact.server.domain.LikePlace;
@@ -11,7 +11,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class CreateLikePlaceDto {
-    private Long id;
     private Long userId;
     private String name;
     private String addr;
